@@ -49,6 +49,10 @@ describe("field renaming", function () {
         testTransform({data: {abc_def: 'xyz', ghi_jkl: 'abc'}}, {data: {abcDef: 'xyz', ghiJkl: 'abc'}});
     });
 
+    it('should transform abc_1_def <-> abc1Def', function() {
+        testTransform({data: {abc_1_def: 'xyz'}}, {data: {abc1Def: 'xyz'}});
+    });
+
     it('should transform abc <-> abc', function() {
         testTransform({data: {abc: 'xyz'}}, {data: {abc: 'xyz'}});
     });

@@ -34,7 +34,7 @@
             return key;
         }
 
-        return key.replace(/[A-Z]/g, function (match, index) {
+        return key.replace(/[A-Z0-9]/g, function (match, index) {
             return index === 0 ? match : '_' + match.toLowerCase();
         });
     }
